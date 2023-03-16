@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/public/uploads/{name}', 'App\Http\Controllers\ImageController@show');
 
 /*Route::get('/test', 'App\Http\Controllers\TestController@test');
 
@@ -29,4 +27,5 @@ Route::post('/generate-url', 'App\Http\Controllers\UrlPageController@generateUrl
 Route::post('/generate-url-for-user', 'App\Http\Controllers\UrlPageController@generateUrlForUser');
 Route::post('/active-url', 'App\Http\Controllers\UrlPageController@activeUrl');
 Route::post('/save-comment-url', 'App\Http\Controllers\UrlPageController@saveCommentUrl');
-Route::post('/start-init', 'App\Http\Controllers\UrlPageController@startInit'
+Route::post('/start-init', 'App\Http\Controllers\UrlPageController@startInit');
+*/

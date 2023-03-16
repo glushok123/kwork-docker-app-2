@@ -19,4 +19,7 @@ Route::group([
     Route::crud('product', 'ProductCrudController');
     Route::crud('history-user-request', 'HistoryUserRequestCrudController');
     Route::crud('user', 'UserCrudController');
+    Route::crud('bundle', 'BundleCrudController');
+    Route::crud('sphere', 'SphereCrudController');
+    Route::crud('advertising-network', 'AdvertisingNetworkCrudController');
 }); // this should be the absolute last line of this file
