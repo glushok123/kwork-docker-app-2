@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 Route::get('/public/uploads/{name}', 'App\Http\Controllers\ImageController@show');
 
+Route::post('/get-products-by-filters', 'App\Http\Controllers\HomeController@filtersPost');
+Route::get('/get-products-by-filters', 'App\Http\Controllers\HomeController@filtersGet');
+
 /*Route::get('/test', 'App\Http\Controllers\TestController@test');
 
 Route::get('/admin-url/', 'App\Http\Controllers\UrlPageController@admin');

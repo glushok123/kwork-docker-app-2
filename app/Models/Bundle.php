@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\AdvertisingNetwork;
 use App\Models\Sphere;
+use App\Models\User;
 
 class Bundle extends Model
 {
@@ -27,6 +28,7 @@ class Bundle extends Model
         'spheres_id', 
         'price', 
         'description',
+        'user_id',
     ];
 
     public function advertising_networks()
@@ -37,5 +39,10 @@ class Bundle extends Model
     public function spheres()
     {
        return $this->belongsTo(Sphere::class);
+    }
+    
+    public function user()
+    {
+       return $this->belongsTo(User::class);
     }
 }

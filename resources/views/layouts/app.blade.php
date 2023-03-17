@@ -65,10 +65,10 @@
 					<a class="nav-link active" aria-current="page" href="#">Каталог </a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="#">Маркетологам </a>
+					<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#marketologModal">Маркетологам </a>
 				  </li>	
 				  <li class="nav-item">
-					<a class="nav-link" href="#">О нас </a>
+					<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">О нас</a>
 				  </li>	
 				  <li class="nav-item">
 					<a class="nav-link" href="#block-contacts">Контакты </a>
@@ -119,6 +119,8 @@
 
 	@yield('content')
 
+	@include('modal.about')
+	@include('modal.marketolog')
 
 	<div class="container">
 		<footer class="row row-cols-5 py-5 my-5 border-top">

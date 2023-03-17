@@ -39,18 +39,31 @@ class UserCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('email');
         CRUD::addColumn([
-            'name' => 'password', 
-            'type' => 'text'
+            'label'     => 'Имя',
+            'name'      => 'name',
         ]);
 
-        /**bcrypt($data['password'])
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        CRUD::addColumn([
+            'name'      => 'logo',
+            'label'     => 'Фото',
+            'type'      => 'image',
+            'prefix' => 'public/uploads/',
+            'height' => 'auto',
+            'width'  => '130px',
+        ]);
+
+        CRUD::addColumn([
+            'label'     => 'Рейтинг',
+            'name'      => 'rating',
+        ]);
+
+        CRUD::addColumn([
+            'label'     => 'Количество заказов',
+            'name'      => 'count_order',
+        ]);
+
+        CRUD::column('email');
     }
 
     /**
@@ -63,15 +76,31 @@ class UserCrudController extends CrudController
     {
         CRUD::setValidation(UserRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('email');
-        CRUD::field('password');
+        CRUD::addField([
+            'label'     => 'Имя',
+            'name'      => 'name',
+        ]);
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
-         */
+        CRUD::addField([
+            'label'     => 'Рейтинг',
+            'name'      => 'rating',
+        ]);
+
+        CRUD::addField([
+            'label'     => 'Количество заказов',
+            'name'      => 'count_order',
+        ]);
+
+        CRUD::field('email');
+
+        CRUD::addField([
+            'name' => 'logo',
+            'type' => 'upload',
+            'upload' => true,
+            'disk' => 'uploads'
+        ]);
+
+        CRUD::field('password');
     }
 
     /**

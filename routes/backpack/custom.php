@@ -22,4 +22,6 @@ Route::group([
     Route::crud('bundle', 'BundleCrudController');
     Route::crud('sphere', 'SphereCrudController');
     Route::crud('advertising-network', 'AdvertisingNetworkCrudController');
+    Route::crud('order', 'OrderCrudController');
+    Route::crud('feedback', 'FeedbackCrudController');
 }); // this should be the absolute last line of this file

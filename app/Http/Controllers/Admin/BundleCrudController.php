@@ -43,6 +43,16 @@ class BundleCrudController extends CrudController
             'label'     => '№',
             'name'      => 'id',
         ]);
+
+        CRUD::addColumn([
+            'label'     => 'Пользователь',
+            'type'      => 'select',
+            'name'      => 'user_id',
+            'entity'    => 'user',
+            'attribute' => 'name',
+            'model'     => "App\Models\User",
+        ]);
+
         CRUD::addColumn([
             'label'     => 'Гарантия',
             'name'      => 'warranty',
@@ -95,6 +105,15 @@ class BundleCrudController extends CrudController
         CRUD::addField([
             'label'     => 'Гарантия',
             'name'      => 'warranty',
+        ]);
+
+        CRUD::addField([
+            'label'     => 'Пользователь',
+            'type'      => 'select',
+            'name'      => 'user_id',
+            'entity'    => 'user',
+            'attribute' => 'name',
+            'model'     => "App\Models\User",
         ]);
 
         CRUD::addField([
