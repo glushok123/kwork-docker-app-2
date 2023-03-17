@@ -137,11 +137,10 @@
 		  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 			<h5>О проекте</h5>
 			<ul class="nav flex-column">
-			  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Контакты</a></li>
-			  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Пользовательское соглашение</a></li>
-			  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Политика конфиденциальности</a></li>
+			  <li class="nav-item mb-2"><a href="{{ url('/user-agreement')}}" class="nav-link p-0 text-muted">Пользовательское соглашение</a></li>
+			  <li class="nav-item mb-2"><a href="{{ url('/privacy-policy')}}" class="nav-link p-0 text-muted">Политика конфиденциальности</a></li>
+			  <li class="nav-item mb-2"><a href="{{ url('/offer')}}" class="nav-link p-0 text-muted">Оферта</a></li>
 			  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-			  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Оферта</a></li>
 			</ul>
 		  </div>
 	  

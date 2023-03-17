@@ -150,4 +150,28 @@ class HomeController extends Controller
 
         return $builders;
     }
+
+    /**
+     * Пользовательское соглашение
+     */
+    public function showUserAgreement()
+    {
+        return view('modules.user_agreement');
+    }
+
+    /**
+     * Политика конфиденциальности
+     */
+    public function showPrivacyPolicy()
+    {
+        return view('modules.privacy_policy');
+    }
+
+    /**
+     * Оферта
+     */
+    public function showOffer()
+    {
+        return view('modules.offer');
+    }
 }
