@@ -20,10 +20,10 @@
 
         </div>
           <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 d-flex align-items-stretch">
-            <button type="button" class="btn  button-show-custom">Заказать звонок</button>
+            <button type="button" class="btn  button-show-custom" data-bs-toggle="modal" data-bs-target="#feedbackModal">Заказать звонок</button>
           </div>
           <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 d-flex align-items-stretch">
-            <button type="button" class="btn  button-show-custom">Задать вопрос в чате</button>
+            <button type="button" class="btn  button-show-custom" data-bs-toggle="modal" data-bs-target="#feedbackModal">Задать вопрос в чате</button>
           </div>
           <div class="col">
 

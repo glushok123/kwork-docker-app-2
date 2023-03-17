@@ -39,17 +39,30 @@ class FeedbackCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('phone');
-        CRUD::column('comment_manager');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        CRUD::addColumn([
+            'label'     => 'Имя',
+            'name'      => 'name',
+        ]);
 
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        CRUD::addColumn([
+            'label'     => 'Телефон',
+            'name'      => 'phone',
+        ]);
+
+        CRUD::addColumn([
+            'label'     => 'Комментарий менеджера',
+            'name'      => 'comment_manager',
+        ]);
+
+        CRUD::addColumn([
+            'label'     => 'Дата создания',
+            'name'      => 'created_at',
+        ]);
+
+        CRUD::addColumn([
+            'label'     => 'Дата обновления',
+            'name'      => 'updated_at',
+        ]);
     }
 
     /**
@@ -62,15 +75,20 @@ class FeedbackCrudController extends CrudController
     {
         CRUD::setValidation(FeedbackRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('phone');
-        CRUD::field('comment_manager');
+        CRUD::addField([
+            'label'     => 'Имя',
+            'name'      => 'name',
+        ]);
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
-         */
+        CRUD::addField([
+            'label'     => 'Телефон',
+            'name'      => 'phone',
+        ]);
+
+        CRUD::addField([
+            'label'     => 'Комментарий менеджера',
+            'name'      => 'comment_manager',
+        ]);
     }
 
     /**

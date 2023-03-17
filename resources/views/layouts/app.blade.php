@@ -76,7 +76,7 @@
 				</ul>
 				<form class="d-flex">
 				  <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"-->
-				  <button class="btn btn-outline-secondary" type="submit">Войти</button>
+				  <a class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#feedbackModal" href="#">Войти</a>
 				</form>
 			  </div>
 			</div>
@@ -121,6 +121,8 @@
 
 	@include('modal.about')
 	@include('modal.marketolog')
+	@include('modal.feedback')
+	@include('modal.order')
 
 	<div class="container">
 		<footer class="row row-cols-5 py-5 my-5 border-top">

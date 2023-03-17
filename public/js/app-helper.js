@@ -45,3 +45,6 @@ $('input[type=radio][name=sort-product]').change(function() {
 });
 
 // ##################################################
+
+$("#feedback-phone").mask("+7 (999) 999-99-99");
+$("#order-phone").mask("+7 (999) 999-99-99");

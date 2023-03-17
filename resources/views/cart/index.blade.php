@@ -26,14 +26,14 @@
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
                         <div class="row">
                             <div class="col-6">
-                                фото
+                                <img src="{{ url('/public/uploads', [ 'name' => $item->user_logo])  }}" alt="" style="max-width:90px; border-radius:10px;">
                             </div>
                             <div class="col-6">
-                                <h5>Имя</h5>
+                                <h5>{{ $item->user_name }}</h5>
                                 <div class="d-flex ">
                                     <div class="ratings">
                                         <i class="fa fa-star rating-color"></i>
-                                        <span >4.5 (7 заказов)</span>
+                                        <span >{{ $item->user_rating }} ({{ $item->user_count_order }} заказов)</span>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
             </div>
             <div class='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 align-items-center my-auto justify-content-center text-center'>
                 <h2 cla>{{ $item->price }} руб.</h2>
-                <button type="button" class="btn  button-sale-custom bg-primary">Купить</button>
+                <button type="button" class="btn  button-sale-custom bg-primary order-create-button" data-bundleid='{{ $item->id }}'>Купить</button>
             </div>
 
         </div>

@@ -10,4 +10,18 @@ class Feedback extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    /**
+     * @var string
+     */
+    protected $table = 'feedback';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'phone',
+        'comment_manager',
+    ];
 }

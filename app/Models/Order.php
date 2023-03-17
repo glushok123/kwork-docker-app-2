@@ -10,4 +10,18 @@ class Order extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    /**
+     * @var string
+     */
+    protected $table = 'orders';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'phone',
+        'bundles_id',
+    ];
 }
