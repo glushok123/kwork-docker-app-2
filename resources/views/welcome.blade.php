@@ -2,18 +2,20 @@
 
 @section('content')
 
-<div class="container">
-    <div class='row header-baner-custom'>
-        <h1 class=''>Готовые маркетинговые связки</h1>
+<div class="banner">
+    <div class="container ">
+        <div class='row header-baner-custom'>
+            <h1 class=''>Готовые маркетинговые связки</h1>
+        </div>
+        <div class='row for-header-baner-custom'>
+            <h4>Выбирайте – покупайте - запускайте</h4>
+        </div>
+    
+        <br><br>
+        @include('cart.filters')
     </div>
-    <div class='row for-header-baner-custom'>
-        <h4>Выбирайте – покупайте - запускайте</h4>
-    </div>
-
-    <br><br>
-    @include('cart.filters')
 </div>
-
+<br><br>
 @include('cart.sort')
 
 <div class='container'>
@@ -32,6 +34,15 @@
 @section('after_scripts')
     <script src="{{ asset('js/app-helper.js') }}" defer></script>
     <script src="{{ asset('js/app-custom.js') }}" defer></script>
+    <style>
+        .banner{
+            background-image: url({{ url('/public/uploads', [ 'name' => 'upload_043052bf7cfd55ec34916a7824b1df4c.png'])  }});
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0fed3; 
+        }
+    </style>
 @endsection
 
 @section('description', 'Готовые маркетинговые связки')

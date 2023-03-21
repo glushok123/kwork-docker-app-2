@@ -67,8 +67,8 @@
 				  <li class="nav-item">
 					<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#marketologModal">Маркетологам </a>
 				  </li>	
-				  <li class="nav-item">
-					<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">О нас</a>
+				  <li class="nav-item text-nowrap">
+					<a class="nav-link text-nowrap" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">О нас</a>
 				  </li>	
 				  <li class="nav-item">
 					<a class="nav-link" href="#block-contacts">Контакты </a>
@@ -76,7 +76,7 @@
 				</ul>
 				<form class="d-flex">
 				  <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"-->
-				  <a class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#feedbackModal" href="#">Войти</a>
+				  <a class=" nav-item btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registerModal" href="#">Войти</a>
 				</form>
 			  </div>
 			</div>
@@ -122,6 +122,7 @@
 	@include('modal.about')
 	@include('modal.marketolog')
 	@include('modal.feedback')
+	@include('modal.register')
 	@include('modal.order')
 
 	<div class="container">
@@ -179,6 +180,10 @@
 		}
 		.for-header-baner-custom{
 
+		}
+		.nav-item{
+			margin-left:8%;
+			margin-top:10px;
 		}
 	</style>
 </body>

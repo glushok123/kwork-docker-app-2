@@ -35,4 +35,27 @@
           <h1><br></h1>
       </div>
     </div>
+
+    <div class="row text-row justify-content-center">
+      <div class="row text-row justify-content-center" 
+
+      style="
+        position: relative;
+
+        top: -35px;
+      "
+      >
+      <a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a>
+      <a href="https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.537468%2C55.748202&mode=usermaps&source=mapframe&um=constructor%3A293b0d586b68f3035ef53c25e68f73fd1aa42cb7338e89fc94a249e4f86ea555&utm_medium=mapframe&utm_source=maps&z=14" 
+      style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск мест</a>
+      <iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=37.537468%2C55.748202&mode=usermaps&source=mapframe&um=constructor%3A293b0d586b68f3035ef53c25e68f73fd1aa42cb7338e89fc94a249e4f86ea555&utm_source=mapframe&z=14" 
+          height="240" 
+          frameborder="1" 
+          allowfullscreen="true" 
+          style="">
+      </iframe>
+  </div>
+    </div>
+      
+
 </div>

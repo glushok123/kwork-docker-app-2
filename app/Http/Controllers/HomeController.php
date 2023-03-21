@@ -114,9 +114,14 @@ class HomeController extends Controller
                 'spheres.name as spheres_name',
                 'advertising_networks.name as advertising_networks_name',
                 'bundles.created_at as date',
+                'users.logo as user_logo',
+                'users.rating as user_rating',
+                'users.count_order as user_count_order',
+                'users.name as user_name',
             )
-            ->join('spheres', 'bundles.spheres_id', '=', 'spheres.id')
-            ->join('advertising_networks', 'bundles.advertising_networks_id', '=', 'advertising_networks.id');
+            ->leftJoin('spheres', 'bundles.spheres_id', '=', 'spheres.id')
+            ->leftJoin('advertising_networks', 'bundles.advertising_networks_id', '=', 'advertising_networks.id')
+            ->leftJoin('users', 'bundles.user_id', '=', 'users.id');
 
         if ($request->filtersSort != null) {
             switch ($request->filtersSort) {

@@ -1,34 +1,36 @@
 <div id='grid-product'>
     @foreach ($modelsBundle as $item)
+
         <div class='row bg-white cart-custom'>
             <div class='col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 '>
-                <div class="row header-card-custom">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
+                <div class="row header-card-custom g-0">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 text-nowrap">
                         <h5>Связка #{{ $item->id }}</h5>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
-                        <span class="text-muted">Добавлено {{ $item->date }}</span>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 text-nowrap">
+                        <span class="text-muted">Добавлено {{ \Carbon\Carbon::parse($item->date)->format('d.m.Y') }}</span>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 text-nowrap">
                         <span class="text-success">Гарантия {{ $item->warranty }}</span>
                     </div>
                 </div>
                 <br>
                 <div class="row before-header-card-custom">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 text-nowrap">
                         <h5>Рекламный канал:</h5>
                         <label for="">{{ $item->advertising_networks_name }}</label>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 text-nowrap">
                         <h5>Сфера:</h5>
                         <label for="">{{ $item->spheres_name }}</label>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-nowrap">
-                        <div class="row">
-                            <div class="col-6">
-                                <img src="{{ url('/public/uploads', [ 'name' => $item->user_logo])  }}" alt="" style="max-width:90px; border-radius:10px;">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 text-nowrap">
+                        <div class="row g-5">
+                            <div class="col-4">
+                                <img src="{{ url('/public/uploads', [ 'name' => $item->user_logo])  }}" alt="" style="width:80px; height:80px; border-radius:10px; object-fit: cover;">
                             </div>
-                            <div class="col-6">
+
+                            <div class="col-4">
                                 <h5>{{ $item->user_name }}</h5>
                                 <div class="d-flex ">
                                     <div class="ratings">
@@ -43,6 +45,7 @@
                 <div class="row before-header-card-custom">
                     <div class="accordion accordion-preview no-border" id="accordionExample">
                         <div class="accordion-item no-border">
+                        <h5>Описание:</h5>
                         <div id="collapseThree{{ $item->id }}" class="accordion-collapse collapse" aria-labelledby="headingThree{{ $item->id }}" data-bs-parent="#accordionExample">
                             <div class="accordion-body" >
                                 @php
@@ -56,9 +59,13 @@
                             </div>
                         </div>
                         <h2 class="accordion-header" id="headingThree{{ $item->id }}">
-                            <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree{{ $item->id }}" aria-expanded="false" aria-controls="collapseThree{{ $item->id }}">
+                            <span class=" collapsed text-primary dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree{{ $item->id }}" aria-expanded="false" aria-controls="collapseThree{{ $item->id }}"
+                                style='
+                                    border-bottom: 1px dashed #000080; /* Добавляем свою линию */ 
+                                    font-size: 16px;
+                                '>
                                 Показать полностью
-                            </button>
+                            </span>
                         </h2>
                         </div>
                     </div>

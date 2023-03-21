@@ -63,6 +63,20 @@ function validationFeedback() {
     return true;
 }
 
+function validationFeedbackRegister() {
+    if ($('#register-name').val() == '') {
+        toastr.error('Необходимо заполнить имя !');
+        return false;
+    }
+
+    if ($('#register-phone').val() == '') {
+        toastr.error('Необходимо заполнить номер телефона !');
+        return false;
+    }
+
+    return true;
+}
+
 function sendFeedback() {
     if (validationFeedback() == false) {
         return;
@@ -87,6 +101,52 @@ function sendFeedback() {
         async: false,
         success: function(data) {
             $('#feedbackModal').modal('hide');
+            toastr.success('Заявка сохранена!');
+        },
+        error: function (jqXHR, exception) {
+            if (jqXHR.status === 0) {
+                alert('Not connect. Verify Network.');
+            } else if (jqXHR.status == 404) {
+                alert('Requested page not found (404).');
+            } else if (jqXHR.status == 500) {
+                alert('Internal Server Error (500).');
+            } else if (exception === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (exception === 'timeout') {
+                alert('Time out error.');
+            } else if (exception === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error. ' + jqXHR.responseText);
+            }
+        }
+    });
+}
+
+function sendRegisterOrder() {
+    if (validationFeedbackRegister() == false) {
+        return;
+    }
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    data = {
+        name: $('#register-name').val(),
+        phone: $('#register-phone').val(),
+    };
+
+    $.ajax({
+        url: '/feedback-send',
+        method: 'post',
+        dataType: "json",
+        data: data,
+        async: false,
+        success: function(data) {
+            $('#registerModal').modal('hide');
             toastr.success('Заявка сохранена!');
         },
         error: function (jqXHR, exception) {
@@ -170,6 +230,7 @@ function sendOrder() {
     });
 }
 
+
 function showModalOrder(bundleId) {
     $('#modal-id-bundleid').text('Связка #' + bundleId)
     $('#modal-id-bundleid').data('bundleid', bundleId)
@@ -179,4 +240,5 @@ function showModalOrder(bundleId) {
 $(document).on('change', '.filters-change', function(){ changeFilters() });
 $(document).on('click', '#feedback-send', function(){ sendFeedback() });
 $(document).on('click', '#order-send', function(){ sendOrder() });
+$(document).on('click', '#register-send', function(){ sendRegisterOrder() });
 $(document).on('click', '.order-create-button', function(){ showModalOrder($(this).data('bundleid')) });

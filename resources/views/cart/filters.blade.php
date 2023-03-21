@@ -1,4 +1,10 @@
-<div class='row bg-white filter g-1 justify-content-center text-center'>
+<div class='row bg-white filter g-1 justify-content-center text-center'
+style="
+    position: relative;
+
+    top: 35px;
+"
+>
 
     <div class='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3  align-items-stretch'>
         <div class="form-floating">
